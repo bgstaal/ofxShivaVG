@@ -36,6 +36,7 @@ class ofxShivaVGRenderer : public ofGLRenderer
 	private:
     
 	    simpleVGContext _vg;
+        deque<ofPoint> _curvePoints;
     
     	void _draw(ofSubPath &path, simpleVGPath &toPath);
     

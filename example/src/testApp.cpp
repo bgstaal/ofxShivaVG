@@ -4,6 +4,7 @@
 void testApp::setup()
 {
     ofSetFrameRate(100.0f);
+    ofSetCurveResolution(100);
     
     _defaultRenderer = ofGetCurrentRenderer();
     _shivaVGRenderer = ofPtr<ofxShivaVGRenderer>(new ofxShivaVGRenderer);
@@ -27,21 +28,15 @@ void testApp::setup()
     
     for (int i = 0; i <5; i++)
     {
-        //_curvedPath.lineTo(ofRandom(-s, s), ofRandom(-s, s));
+        _curvedPath.lineTo(ofRandom(-s, s), ofRandom(-s, s));
     }
     
-    _curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
-    _curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
-    _curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
-    _curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
-    _curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
+    //_curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
     
-    /*
-    for (int i = 0; i <5; i++)
+    for (int i = 0, num = 10; i <num; i++)
     {
-        _curvedPath.curveTo(ofRandom(-s, s), ofRandom(-s, s));
+		_curvedPath.curveTo(ofRandom(-s, s), ofRandom(-s, s));
     }
-     */
 }
 
 //--------------------------------------------------------------

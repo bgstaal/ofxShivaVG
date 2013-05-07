@@ -13,9 +13,11 @@ class simpleVGPath
 	    VGPath getVGPath();
     
 	    void close();
-	    void ellipse(VGfloat x, VGfloat y, VGfloat w, VGfloat h);
-	    void moveTo(VGfloat x, VGfloat y);
-    	void lineTo(VGfloat x, VGfloat y);
+	    void ellipse(float x, float y, float w, float h);
+	    void moveTo(float x, float y);
+    	void lineTo(float x, float y);
+	    void quadTo(float controlX, float controlY, float x, float y);
+	    void cubicTo(float controlX1, float controlY1, float controlX2, float controlY2, float x, float y);
     
 	private:
     
