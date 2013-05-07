@@ -1,0 +1,29 @@
+#OSX
+.DS_Store
+*.swp
+*~.nib
+# Thumbnails
+._*
+
+bin/
+build/
+obj/
+*.o
+Debug*/
+Release*/
+*.mode*
+*.app/
+*.pyc
+
+#XCode
+*.pbxuser
+*.perspective
+*.perspectivev3
+*.mode1v3
+*.mode2v3
+*.xcactivitylog
+#XCode 4
+xcuserdata
+*.xcworkspace
+xcode/DerivedData/
+DerivedData/
