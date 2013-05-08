@@ -90,7 +90,6 @@ void testApp::update()
 void testApp::draw()
 {
 	ofBackground(20);
-    glPushMatrix();
     
     float w = _shapeSize;
     float s = 40.0f;
@@ -138,7 +137,16 @@ void testApp::draw()
     	_curvedPath.draw();
     ofPopMatrix();
     
-    glPopMatrix();
+    ofSetColor(255, 255, 255);
+    
+    stringstream m;
+    m << "FPS: " << (int)ofGetFrameRate();
+    m << " | current renderer: ";
+    m << (ofGetCurrentRenderer() == _defaultRenderer ? "DEFAULT" : "OFX_SHIVA_VG");
+    m << " | click to toogle renderer";
+    m << " | hit 'c' to toggle line-cap style";
+    
+    ofDrawBitmapString(m.str(), s, ofGetHeight() - s);
 }
 
 //--------------------------------------------------------------
