@@ -25,4 +25,6 @@ class testApp : public ofBaseApp
     
 	    ofPolyline _jaggedPath;
 	    ofPath _curvedPath;
+    
+	    float _zoom;
 };

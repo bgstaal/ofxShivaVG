@@ -82,17 +82,6 @@ void ofxShivaVGRenderer::draw(ofPath &path)
     
     // TODO: fill or stroke?
     
-    ofColor prevColor;
-	if(path.getUseShapeColor())
-    {
-		prevColor = style.color;
-	}
-    
-    ofColor c = path.getStrokeColor();
-    
-    _vg.setStrokeColor(c.r, c.g, c.b, c.a);
-    _vg.setStrokeWidth(path.getStrokeWidth());
-    
 	vector<ofSubPath> & paths = path.getSubPaths();
     
     simpleVGPath p;
@@ -102,12 +91,37 @@ void ofxShivaVGRenderer::draw(ofPath &path)
 		_draw(paths[i], p);
 	}
     
-    _vg.strokePath(p);
+    ofColor prevColor;
+	if(path.getUseShapeColor()) prevColor = style.color;
     
-	if(path.getUseShapeColor())
+    ofColor c = style.color;
+    
+    
+    if (path.isFilled())
     {
-		setColor(prevColor);
-	}
+        if (path.getUseShapeColor())
+        {
+            c = path.getFillColor();
+        }
+        
+        _vg.setFillColor(c.r, c.g, c.b, c.a);
+        _vg.fillPath(p);
+    }
+    
+    if (path.hasOutline())
+    {
+        if (path.getUseShapeColor())
+        {
+            c = path.getStrokeColor();
+        }
+        
+        _vg.setStrokeColor(c.r, c.g, c.b, c.a);
+        _vg.setStrokeWidth(path.getStrokeWidth());
+        
+        _vg.strokePath(p);
+    }
+    
+	if(path.getUseShapeColor()) setColor(prevColor);
 }
 
 void ofxShivaVGRenderer::_draw(ofSubPath &path, simpleVGPath &p)

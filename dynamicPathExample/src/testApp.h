@@ -27,6 +27,8 @@ class testApp : public ofBaseApp
 	    bool _useShiva;
 	    ofPtr<ofBaseRenderer> _defaultRenderer;
 	    ofPtr<ofxShivaVGRenderer> _shivaRenderer;
+	    float _zoom;
+	    float _rotation;
     
 	    void _addNewPath();
     	ofPoint _calculateNextPoint();

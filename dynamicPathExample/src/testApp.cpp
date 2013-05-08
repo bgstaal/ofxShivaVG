@@ -6,7 +6,7 @@ void testApp::setup()
     ofSetFrameRate(100);
     ofSetVerticalSync(false);
     
-    _center = ofPoint(ofGetWidth()/2.0f, ofGetHeight()/2.0f);
+    _center = ofPoint();
     _addNewPath();
     _paths[_paths.size()-1].moveTo(_calculateNextPoint());
     
@@ -14,6 +14,8 @@ void testApp::setup()
     _useShiva = false;
     _shivaRenderer = ofPtr<ofxShivaVGRenderer>(new ofxShivaVGRenderer);
     _shivaRenderer->setLineCapStyle(VG_CAP_ROUND);
+    
+    _rotation = _zoom = 0;
 }
 
 ofPoint testApp::_calculateNextPoint()
@@ -52,6 +54,8 @@ void testApp::_addNewPath()
 void testApp::update()
 {
     float t = ofGetElapsedTimef();
+    _zoom = sin(t) * 500;
+    _rotation += .2f;
     
     ofPoint p = _calculateNextPoint();
     
@@ -87,10 +91,19 @@ void testApp::draw()
 {
     ofBackground(20);
     
+    glPushMatrix();
+    //glTranslatef(-ofGetWidth()/2.0f, ofGetW, _zoom);
+   
+    glTranslatef(ofGetWidth()/2.0f, ofGetHeight()/2.0f, _zoom);
+    glRotatef(_rotation, 0, 0, 1.0f);
+    
+    
     for (vector<ofPath>::iterator p = _paths.begin(); p != _paths.end(); p++)
     {
         p->draw();
     }
+    
+    glPopMatrix();
     
     stringstream s;
     s << "FPS: " << (int)ofGetFrameRate();

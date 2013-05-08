@@ -22,14 +22,16 @@ void testApp::setup()
     
     _jaggedPath.close();
     
-    _curvedPath.setFilled(false);
+    _curvedPath.setFilled(true);
+    _curvedPath.setStrokeColor(ofColor(255, 0, 0));
     _curvedPath.setStrokeWidth(20.0f);
+    _curvedPath.setFillColor(ofColor(255, 255, 0));
     
     //_curvedPath.lineTo(-s, 0);
     //_curvedPath.quadBezierTo(-s, -s, s, -s, s, 0);
-    _curvedPath.arc(0, 0, 100.0f, 100.0f, -90, 90);
+    //_curvedPath.arc(0, 0, 100.0f, 100.0f, -90, 90);
     
-    /*
+    
     for (int i = 0; i <5; i++)
     {
         _curvedPath.lineTo(ofRandom(-s, s), ofRandom(-s, s));
@@ -41,19 +43,21 @@ void testApp::setup()
     {
 		_curvedPath.curveTo(ofRandom(-s, s), ofRandom(-s, s));
     }
-     */
 }
 
 //--------------------------------------------------------------
 void testApp::update()
 {
-    
+    _zoom = sin(ofGetElapsedTimef()) * 1000;
 }
 
 //--------------------------------------------------------------
 void testApp::draw()
 {
 	ofBackground(20);
+    
+    glPushMatrix();
+    glTranslatef(0, 0, _zoom);
     
     float w = 100.0f;
     float s = 20.0f;
@@ -84,6 +88,8 @@ void testApp::draw()
     ofPopMatrix();
     
     _curvedPath.draw(ofGetWidth()*.75f, ofGetWidth()*.25f);
+    
+    glPopMatrix();
 }
 
 //--------------------------------------------------------------
