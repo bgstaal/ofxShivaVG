@@ -6,6 +6,7 @@
 class testApp : public ofBaseApp
 {
 	public:
+    
 		void setup();
 		void update();
 		void draw();
@@ -21,6 +22,7 @@ class testApp : public ofBaseApp
 		void gotMessage(ofMessage msg);
     
 	private:
+    
 		ofPtr<ofBaseRenderer> _defaultRenderer;
 		ofPtr<ofxShivaVGRenderer> _shivaVGRenderer;
     
