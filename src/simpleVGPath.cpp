@@ -62,7 +62,7 @@ void simpleVGPath::cubicTo(float controlX1, float controlY1, float controlX2, fl
     data[2] = controlX2; data[3] = controlY2;
     data[4] = x; data[5] = y;
     vgAppendPathData(_path, 1, &seg, data);
-}
+}	
 
 void simpleVGPath::close()
 {

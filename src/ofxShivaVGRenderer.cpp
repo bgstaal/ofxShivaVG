@@ -37,6 +37,13 @@ VGJoinStyle ofxShivaVGRenderer::getLineJoinStyle()
     return _vg.getStrokeJoinStyle();
 }
 
+void ofxShivaVGRenderer::background(const ofColor & c)
+{
+    _bgColor = c;
+	glClearColor(_bgColor[0],_bgColor[1],_bgColor[2], _bgColor[3]);
+	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
 
 // --------------------------------------------
 // DRAWING
@@ -74,7 +81,12 @@ void ofxShivaVGRenderer::draw(ofPath &path)
     ofStyle style = ofGetStyle();
     
     // TODO: fill or stroke?
-    // TODO: multiply colors with current color?
+    
+    ofColor prevColor;
+	if(path.getUseShapeColor())
+    {
+		prevColor = style.color;
+	}
     
     ofColor c = path.getStrokeColor();
     
@@ -91,66 +103,86 @@ void ofxShivaVGRenderer::draw(ofPath &path)
 	}
     
     _vg.strokePath(p);
+    
+	if(path.getUseShapeColor())
+    {
+		setColor(prevColor);
+	}
 }
 
 void ofxShivaVGRenderer::_draw(ofSubPath &path, simpleVGPath &p)
 {
     const vector<ofSubPath::Command> & commands = path.getCommands();
     
-    if (commands.size() > 1)
+    int i = 0;
+    
+    for(vector<ofSubPath::Command>::const_iterator c = commands.begin(); c != commands.end(); ++c)
     {
-        int i = 0;
-        
-        for(vector<ofSubPath::Command>::const_iterator c = commands.begin(); c != commands.end(); ++c)
+        switch(c->type)
         {
-            switch(c->type)
-            {
-                case ofSubPath::Command::lineTo:
+            case ofSubPath::Command::lineTo:
+                
+                _curvePoints.clear();
+                
+                if (i == 0)
+                {
+                    // if the first command in a subPath is a lineTo it should be
+                    // interpeted as a moveTo command
+                    // this makes up for the lack of a moveTo command in ofSubPath
                     
-                    _curvePoints.clear();
-                    
-                    if (i == 0)
-                    {
-                        // if the first command in a subPath is a lineTo it should be
-                        // interpeted as a moveTo command
-                        // this makes up for the lack of a moveTo command in ofSubPath
-                        
-                        p.moveTo(c->to.x, c->to.y);
-                        _curvePoints.push_back(c->to);
-                    }    
-                    else
-                    {
-                        p.lineTo(c->to.x, c->to.y);
-                    }
-                    
-                	break;
-                    
-                case ofSubPath::Command::curveTo:
-                    
+                    p.moveTo(c->to.x, c->to.y);
                     _curvePoints.push_back(c->to);
+                }    
+                else
+                {
+                    p.lineTo(c->to.x, c->to.y);
+                }
+                
+                break;
+                
+            case ofSubPath::Command::curveTo:
+                
+                _curvePoints.push_back(c->to);
+                
+                //code from ofCairoRenderer to convert from catmull rom to bezier
+                if(_curvePoints.size() == 4)
+                {
+                    ofPoint p1=_curvePoints[0];
+                    ofPoint p2=_curvePoints[1];
+                    ofPoint p3=_curvePoints[2];
+                    ofPoint p4=_curvePoints[3];
                     
-                    //code from ofCairoRenderer to convert from catmull rom to bezier
-                    if(_curvePoints.size() == 4)
-                    {
-                        ofPoint p1=_curvePoints[0];
-                        ofPoint p2=_curvePoints[1];
-                        ofPoint p3=_curvePoints[2];
-                        ofPoint p4=_curvePoints[3];
-                        
-                        ofPoint cp1 = p2 + ( p3 - p1 ) * (1.0/6);
-                        ofPoint cp2 = p3 + ( p2 - p4 ) * (1.0/6);
-                        
-                    	p.cubicTo(cp1.x, cp1.y, cp2.x, cp2.y, p3.x, p3.y);
-                        
-                        //cairo_curve_to( cr, cp1.x, cp1.y, cp2.x, cp2.y, p3.x, p3.y );
-                        _curvePoints.pop_front();
-                    }
+                    ofPoint cp1 = p2 + ( p3 - p1 ) * (1.0/6);
+                    ofPoint cp2 = p3 + ( p2 - p4 ) * (1.0/6);
+                    
+                    p.cubicTo(cp1.x, cp1.y, cp2.x, cp2.y, p3.x, p3.y);
+                    
+                    //cairo_curve_to( cr, cp1.x, cp1.y, cp2.x, cp2.y, p3.x, p3.y );
+                    _curvePoints.pop_front();
+                }
 
-                    break;
-            }
-            
-            i++;
+                break;
+                
+            case ofSubPath::Command::bezierTo:
+                _curvePoints.clear();
+                p.cubicTo(c->cp1.x, c->cp1.y, c->cp2.x, c->cp2.y, c->to.x, c->to.y);
+                break;
+                
+            case ofSubPath::Command::quadBezierTo:
+                _curvePoints.clear();
+                p.cubicTo(c->cp1.x, c->cp1.y, c->cp2.x, c->cp2.y, c->to.x, c->to.y);
+                break;
+                
+            case ofSubPath::Command::arc:
+                ofLog(OF_LOG_WARNING, "Arcs are not implemented in the ofxShivaRenderer yet. Sory :-(");
+                break;
+                
+            case ofSubPath::Command::arcNegative:
+                ofLog(OF_LOG_WARNING, "Arcs are not implemented in the ofxShivaRenderer yet. Sorry :-(");
+                break;
         }
+        
+        i++;
     }
 }
 

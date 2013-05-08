@@ -9,7 +9,9 @@ simpleVGContext::simpleVGContext()
 void simpleVGContext::create(VGint w, VGint h)
 {
     _hasContext = vgCreateContextSH(w, h);
+    vgSeti(VG_RENDERING_QUALITY, VG_RENDERING_QUALITY_BETTER);
 }
+
 
 void simpleVGContext::setFillColor(VGint r, VGint g, VGint b, VGint a)
 {

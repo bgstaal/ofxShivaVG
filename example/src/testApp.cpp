@@ -22,10 +22,14 @@ void testApp::setup()
     
     _jaggedPath.close();
     
-    
     _curvedPath.setFilled(false);
     _curvedPath.setStrokeWidth(20.0f);
     
+    //_curvedPath.lineTo(-s, 0);
+    //_curvedPath.quadBezierTo(-s, -s, s, -s, s, 0);
+    _curvedPath.arc(0, 0, 100.0f, 100.0f, -90, 90);
+    
+    /*
     for (int i = 0; i <5; i++)
     {
         _curvedPath.lineTo(ofRandom(-s, s), ofRandom(-s, s));
@@ -37,6 +41,7 @@ void testApp::setup()
     {
 		_curvedPath.curveTo(ofRandom(-s, s), ofRandom(-s, s));
     }
+     */
 }
 
 //--------------------------------------------------------------
@@ -48,7 +53,7 @@ void testApp::update()
 //--------------------------------------------------------------
 void testApp::draw()
 {
-	ofBackground(0);
+	ofBackground(20);
     
     float w = 100.0f;
     float s = 20.0f;
@@ -144,7 +149,7 @@ void testApp::mouseReleased(int x, int y, int button)
 //--------------------------------------------------------------
 void testApp::windowResized(int w, int h)
 {
-
+    
 }
 
 //--------------------------------------------------------------

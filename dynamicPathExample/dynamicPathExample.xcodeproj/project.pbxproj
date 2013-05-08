@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E49A6E91738E9F500BA9146 /* ofxShivaVGRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A6E71738E9F500BA9146 /* ofxShivaVGRenderer.cpp */; };
-		4E49A7281738EC8400BA9146 /* shArrays.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7141738EC8400BA9146 /* shArrays.c */; };
-		4E49A7291738EC8400BA9146 /* shContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7161738EC8400BA9146 /* shContext.c */; };
-		4E49A72A1738EC8400BA9146 /* shExtensions.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7191738EC8400BA9146 /* shExtensions.c */; };
-		4E49A72B1738EC8400BA9146 /* shGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A71B1738EC8400BA9146 /* shGeometry.c */; };
-		4E49A72C1738EC8400BA9146 /* shImage.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A71D1738EC8400BA9146 /* shImage.c */; };
-		4E49A72D1738EC8400BA9146 /* shPaint.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A71F1738EC8400BA9146 /* shPaint.c */; };
-		4E49A72E1738EC8400BA9146 /* shParams.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7211738EC8400BA9146 /* shParams.c */; };
-		4E49A72F1738EC8400BA9146 /* shPath.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7221738EC8400BA9146 /* shPath.c */; };
-		4E49A7301738EC8400BA9146 /* shPipeline.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7241738EC8400BA9146 /* shPipeline.c */; };
-		4E49A7311738EC8400BA9146 /* shVectors.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7251738EC8400BA9146 /* shVectors.c */; };
-		4E49A7321738EC8400BA9146 /* shVgu.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7271738EC8400BA9146 /* shVgu.c */; };
-		4E49A7721739AB5C00BA9146 /* simpleVGContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A76E1739AB5500BA9146 /* simpleVGContext.cpp */; };
-		4E49A7731739AB5C00BA9146 /* simpleVGPath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7701739AB5600BA9146 /* simpleVGPath.cpp */; };
+		4E49A75C1739AA8600BA9146 /* shArrays.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7451739AA8600BA9146 /* shArrays.c */; };
+		4E49A75D1739AA8600BA9146 /* shContext.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7471739AA8600BA9146 /* shContext.c */; };
+		4E49A75E1739AA8600BA9146 /* shExtensions.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A74A1739AA8600BA9146 /* shExtensions.c */; };
+		4E49A75F1739AA8600BA9146 /* shGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A74C1739AA8600BA9146 /* shGeometry.c */; };
+		4E49A7601739AA8600BA9146 /* shImage.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A74E1739AA8600BA9146 /* shImage.c */; };
+		4E49A7611739AA8600BA9146 /* shPaint.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7501739AA8600BA9146 /* shPaint.c */; };
+		4E49A7621739AA8600BA9146 /* shParams.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7521739AA8600BA9146 /* shParams.c */; };
+		4E49A7631739AA8600BA9146 /* shPath.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7531739AA8600BA9146 /* shPath.c */; };
+		4E49A7641739AA8600BA9146 /* shPipeline.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7551739AA8600BA9146 /* shPipeline.c */; };
+		4E49A7651739AA8600BA9146 /* shVectors.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7561739AA8600BA9146 /* shVectors.c */; };
+		4E49A7661739AA8600BA9146 /* shVgu.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7581739AA8600BA9146 /* shVgu.c */; };
+		4E49A7671739AA8600BA9146 /* ofxShivaVGRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A75A1739AA8600BA9146 /* ofxShivaVGRenderer.cpp */; };
+		4E49A76C1739AB3B00BA9146 /* simpleVGContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A7681739AB3B00BA9146 /* simpleVGContext.cpp */; };
+		4E49A76D1739AB3B00BA9146 /* simpleVGPath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E49A76A1739AB3B00BA9146 /* simpleVGPath.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -71,35 +71,35 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4E49A6E71738E9F500BA9146 /* ofxShivaVGRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxShivaVGRenderer.cpp; sourceTree = "<group>"; };
-		4E49A6E81738E9F500BA9146 /* ofxShivaVGRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxShivaVGRenderer.h; sourceTree = "<group>"; };
-		4E49A7101738EC8400BA9146 /* openvg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openvg.h; sourceTree = "<group>"; };
-		4E49A7111738EC8400BA9146 /* vgu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vgu.h; sourceTree = "<group>"; };
-		4E49A7131738EC8400BA9146 /* shArrayBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shArrayBase.h; sourceTree = "<group>"; };
-		4E49A7141738EC8400BA9146 /* shArrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shArrays.c; sourceTree = "<group>"; };
-		4E49A7151738EC8400BA9146 /* shArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shArrays.h; sourceTree = "<group>"; };
-		4E49A7161738EC8400BA9146 /* shContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shContext.c; sourceTree = "<group>"; };
-		4E49A7171738EC8400BA9146 /* shContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shContext.h; sourceTree = "<group>"; };
-		4E49A7181738EC8400BA9146 /* shDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shDefs.h; sourceTree = "<group>"; };
-		4E49A7191738EC8400BA9146 /* shExtensions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shExtensions.c; sourceTree = "<group>"; };
-		4E49A71A1738EC8400BA9146 /* shExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shExtensions.h; sourceTree = "<group>"; };
-		4E49A71B1738EC8400BA9146 /* shGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shGeometry.c; sourceTree = "<group>"; };
-		4E49A71C1738EC8400BA9146 /* shGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shGeometry.h; sourceTree = "<group>"; };
-		4E49A71D1738EC8400BA9146 /* shImage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shImage.c; sourceTree = "<group>"; };
-		4E49A71E1738EC8400BA9146 /* shImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shImage.h; sourceTree = "<group>"; };
-		4E49A71F1738EC8400BA9146 /* shPaint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shPaint.c; sourceTree = "<group>"; };
-		4E49A7201738EC8400BA9146 /* shPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shPaint.h; sourceTree = "<group>"; };
-		4E49A7211738EC8400BA9146 /* shParams.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shParams.c; sourceTree = "<group>"; };
-		4E49A7221738EC8400BA9146 /* shPath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shPath.c; sourceTree = "<group>"; };
-		4E49A7231738EC8400BA9146 /* shPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shPath.h; sourceTree = "<group>"; };
-		4E49A7241738EC8400BA9146 /* shPipeline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shPipeline.c; sourceTree = "<group>"; };
-		4E49A7251738EC8400BA9146 /* shVectors.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shVectors.c; sourceTree = "<group>"; };
-		4E49A7261738EC8400BA9146 /* shVectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shVectors.h; sourceTree = "<group>"; };
-		4E49A7271738EC8400BA9146 /* shVgu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shVgu.c; sourceTree = "<group>"; };
-		4E49A76E1739AB5500BA9146 /* simpleVGContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simpleVGContext.cpp; sourceTree = "<group>"; };
-		4E49A76F1739AB5500BA9146 /* simpleVGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleVGContext.h; sourceTree = "<group>"; };
-		4E49A7701739AB5600BA9146 /* simpleVGPath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simpleVGPath.cpp; sourceTree = "<group>"; };
-		4E49A7711739AB5800BA9146 /* simpleVGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleVGPath.h; sourceTree = "<group>"; };
+		4E49A7411739AA8600BA9146 /* openvg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openvg.h; sourceTree = "<group>"; };
+		4E49A7421739AA8600BA9146 /* vgu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vgu.h; sourceTree = "<group>"; };
+		4E49A7441739AA8600BA9146 /* shArrayBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shArrayBase.h; sourceTree = "<group>"; };
+		4E49A7451739AA8600BA9146 /* shArrays.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shArrays.c; sourceTree = "<group>"; };
+		4E49A7461739AA8600BA9146 /* shArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shArrays.h; sourceTree = "<group>"; };
+		4E49A7471739AA8600BA9146 /* shContext.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shContext.c; sourceTree = "<group>"; };
+		4E49A7481739AA8600BA9146 /* shContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shContext.h; sourceTree = "<group>"; };
+		4E49A7491739AA8600BA9146 /* shDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shDefs.h; sourceTree = "<group>"; };
+		4E49A74A1739AA8600BA9146 /* shExtensions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shExtensions.c; sourceTree = "<group>"; };
+		4E49A74B1739AA8600BA9146 /* shExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shExtensions.h; sourceTree = "<group>"; };
+		4E49A74C1739AA8600BA9146 /* shGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shGeometry.c; sourceTree = "<group>"; };
+		4E49A74D1739AA8600BA9146 /* shGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shGeometry.h; sourceTree = "<group>"; };
+		4E49A74E1739AA8600BA9146 /* shImage.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shImage.c; sourceTree = "<group>"; };
+		4E49A74F1739AA8600BA9146 /* shImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shImage.h; sourceTree = "<group>"; };
+		4E49A7501739AA8600BA9146 /* shPaint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shPaint.c; sourceTree = "<group>"; };
+		4E49A7511739AA8600BA9146 /* shPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shPaint.h; sourceTree = "<group>"; };
+		4E49A7521739AA8600BA9146 /* shParams.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shParams.c; sourceTree = "<group>"; };
+		4E49A7531739AA8600BA9146 /* shPath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shPath.c; sourceTree = "<group>"; };
+		4E49A7541739AA8600BA9146 /* shPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shPath.h; sourceTree = "<group>"; };
+		4E49A7551739AA8600BA9146 /* shPipeline.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shPipeline.c; sourceTree = "<group>"; };
+		4E49A7561739AA8600BA9146 /* shVectors.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shVectors.c; sourceTree = "<group>"; };
+		4E49A7571739AA8600BA9146 /* shVectors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shVectors.h; sourceTree = "<group>"; };
+		4E49A7581739AA8600BA9146 /* shVgu.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shVgu.c; sourceTree = "<group>"; };
+		4E49A75A1739AA8600BA9146 /* ofxShivaVGRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxShivaVGRenderer.cpp; sourceTree = "<group>"; };
+		4E49A75B1739AA8600BA9146 /* ofxShivaVGRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxShivaVGRenderer.h; sourceTree = "<group>"; };
+		4E49A7681739AB3B00BA9146 /* simpleVGContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simpleVGContext.cpp; sourceTree = "<group>"; };
+		4E49A7691739AB3B00BA9146 /* simpleVGContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleVGContext.h; sourceTree = "<group>"; };
+		4E49A76A1739AB3B00BA9146 /* simpleVGPath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = simpleVGPath.cpp; sourceTree = "<group>"; };
+		4E49A76B1739AB3B00BA9146 /* simpleVGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = simpleVGPath.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -111,7 +111,7 @@
 		E45BE9770E8CC7DD009D7055 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
-		E4B69B5B0A3A1756003C02F2 /* ofxShivaVGRendererTestDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ofxShivaVGRendererTestDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* dynamicPathExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dynamicPathExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
@@ -148,88 +148,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4E49A6E61738E9D700BA9146 /* ofxShivaVGRenderer */ = {
+		4E49A73C1739AA7C00BA9146 /* ofxShivaVG */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A76E1739AB5500BA9146 /* simpleVGContext.cpp */,
-				4E49A76F1739AB5500BA9146 /* simpleVGContext.h */,
-				4E49A7701739AB5600BA9146 /* simpleVGPath.cpp */,
-				4E49A7711739AB5800BA9146 /* simpleVGPath.h */,
-				4E49A70C1738EC8400BA9146 /* libs */,
-				4E49A6E71738E9F500BA9146 /* ofxShivaVGRenderer.cpp */,
-				4E49A6E81738E9F500BA9146 /* ofxShivaVGRenderer.h */,
+				4E49A73D1739AA8600BA9146 /* libs */,
+				4E49A7591739AA8600BA9146 /* src */,
 			);
-			name = ofxShivaVGRenderer;
-			path = ../src;
+			name = ofxShivaVG;
 			sourceTree = "<group>";
 		};
-		4E49A70C1738EC8400BA9146 /* libs */ = {
+		4E49A73D1739AA8600BA9146 /* libs */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A70D1738EC8400BA9146 /* ShivaVG */,
+				4E49A73E1739AA8600BA9146 /* ShivaVG */,
 			);
 			name = libs;
 			path = ../libs;
 			sourceTree = "<group>";
 		};
-		4E49A70D1738EC8400BA9146 /* ShivaVG */ = {
+		4E49A73E1739AA8600BA9146 /* ShivaVG */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A70E1738EC8400BA9146 /* include */,
-				4E49A7121738EC8400BA9146 /* src */,
+				4E49A73F1739AA8600BA9146 /* include */,
+				4E49A7431739AA8600BA9146 /* src */,
 			);
 			path = ShivaVG;
 			sourceTree = "<group>";
 		};
-		4E49A70E1738EC8400BA9146 /* include */ = {
+		4E49A73F1739AA8600BA9146 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A70F1738EC8400BA9146 /* vg */,
+				4E49A7401739AA8600BA9146 /* vg */,
 			);
 			path = include;
 			sourceTree = "<group>";
 		};
-		4E49A70F1738EC8400BA9146 /* vg */ = {
+		4E49A7401739AA8600BA9146 /* vg */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A7101738EC8400BA9146 /* openvg.h */,
-				4E49A7111738EC8400BA9146 /* vgu.h */,
+				4E49A7411739AA8600BA9146 /* openvg.h */,
+				4E49A7421739AA8600BA9146 /* vgu.h */,
 			);
 			path = vg;
 			sourceTree = "<group>";
 		};
-		4E49A7121738EC8400BA9146 /* src */ = {
+		4E49A7431739AA8600BA9146 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A7131738EC8400BA9146 /* shArrayBase.h */,
-				4E49A7141738EC8400BA9146 /* shArrays.c */,
-				4E49A7151738EC8400BA9146 /* shArrays.h */,
-				4E49A7161738EC8400BA9146 /* shContext.c */,
-				4E49A7171738EC8400BA9146 /* shContext.h */,
-				4E49A7181738EC8400BA9146 /* shDefs.h */,
-				4E49A7191738EC8400BA9146 /* shExtensions.c */,
-				4E49A71A1738EC8400BA9146 /* shExtensions.h */,
-				4E49A71B1738EC8400BA9146 /* shGeometry.c */,
-				4E49A71C1738EC8400BA9146 /* shGeometry.h */,
-				4E49A71D1738EC8400BA9146 /* shImage.c */,
-				4E49A71E1738EC8400BA9146 /* shImage.h */,
-				4E49A71F1738EC8400BA9146 /* shPaint.c */,
-				4E49A7201738EC8400BA9146 /* shPaint.h */,
-				4E49A7211738EC8400BA9146 /* shParams.c */,
-				4E49A7221738EC8400BA9146 /* shPath.c */,
-				4E49A7231738EC8400BA9146 /* shPath.h */,
-				4E49A7241738EC8400BA9146 /* shPipeline.c */,
-				4E49A7251738EC8400BA9146 /* shVectors.c */,
-				4E49A7261738EC8400BA9146 /* shVectors.h */,
-				4E49A7271738EC8400BA9146 /* shVgu.c */,
+				4E49A7441739AA8600BA9146 /* shArrayBase.h */,
+				4E49A7451739AA8600BA9146 /* shArrays.c */,
+				4E49A7461739AA8600BA9146 /* shArrays.h */,
+				4E49A7471739AA8600BA9146 /* shContext.c */,
+				4E49A7481739AA8600BA9146 /* shContext.h */,
+				4E49A7491739AA8600BA9146 /* shDefs.h */,
+				4E49A74A1739AA8600BA9146 /* shExtensions.c */,
+				4E49A74B1739AA8600BA9146 /* shExtensions.h */,
+				4E49A74C1739AA8600BA9146 /* shGeometry.c */,
+				4E49A74D1739AA8600BA9146 /* shGeometry.h */,
+				4E49A74E1739AA8600BA9146 /* shImage.c */,
+				4E49A74F1739AA8600BA9146 /* shImage.h */,
+				4E49A7501739AA8600BA9146 /* shPaint.c */,
+				4E49A7511739AA8600BA9146 /* shPaint.h */,
+				4E49A7521739AA8600BA9146 /* shParams.c */,
+				4E49A7531739AA8600BA9146 /* shPath.c */,
+				4E49A7541739AA8600BA9146 /* shPath.h */,
+				4E49A7551739AA8600BA9146 /* shPipeline.c */,
+				4E49A7561739AA8600BA9146 /* shVectors.c */,
+				4E49A7571739AA8600BA9146 /* shVectors.h */,
+				4E49A7581739AA8600BA9146 /* shVgu.c */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		4E49A7591739AA8600BA9146 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				4E49A7681739AB3B00BA9146 /* simpleVGContext.cpp */,
+				4E49A7691739AB3B00BA9146 /* simpleVGContext.h */,
+				4E49A76A1739AB3B00BA9146 /* simpleVGPath.cpp */,
+				4E49A76B1739AB3B00BA9146 /* simpleVGPath.h */,
+				4E49A75A1739AA8600BA9146 /* ofxShivaVGRenderer.cpp */,
+				4E49A75B1739AA8600BA9146 /* ofxShivaVGRenderer.h */,
+			);
+			name = src;
+			path = ../src;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				4E49A6E61738E9D700BA9146 /* ofxShivaVGRenderer */,
+				4E49A73C1739AA7C00BA9146 /* ofxShivaVG */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -287,7 +295,7 @@
 				E4EEC9E9138DF44700A80321 /* openFrameworks */,
 				BB4B014C10F69532006C3DED /* addons */,
 				E45BE5980E8CC70C009D7055 /* frameworks */,
-				E4B69B5B0A3A1756003C02F2 /* ofxShivaVGRendererTestDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* dynamicPathExampleDebug.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -313,9 +321,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E4B69B5A0A3A1756003C02F2 /* ofxShivaVGRendererTest */ = {
+		E4B69B5A0A3A1756003C02F2 /* dynamicPathExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ofxShivaVGRendererTest" */;
+			buildConfigurationList = E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "dynamicPathExample" */;
 			buildPhases = (
 				E4B69B580A3A1756003C02F2 /* Sources */,
 				E4B69B590A3A1756003C02F2 /* Frameworks */,
@@ -327,9 +335,9 @@
 			dependencies = (
 				E4EEB9AC138B136A00A80321 /* PBXTargetDependency */,
 			);
-			name = ofxShivaVGRendererTest;
+			name = dynamicPathExample;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* ofxShivaVGRendererTestDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* dynamicPathExampleDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -337,7 +345,7 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ofxShivaVGRendererTest" */;
+			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "dynamicPathExample" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -358,7 +366,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				E4B69B5A0A3A1756003C02F2 /* ofxShivaVGRendererTest */,
+				E4B69B5A0A3A1756003C02F2 /* dynamicPathExample */,
 			);
 		};
 /* End PBXProject section */
@@ -396,20 +404,20 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
-				4E49A6E91738E9F500BA9146 /* ofxShivaVGRenderer.cpp in Sources */,
-				4E49A7281738EC8400BA9146 /* shArrays.c in Sources */,
-				4E49A7291738EC8400BA9146 /* shContext.c in Sources */,
-				4E49A72A1738EC8400BA9146 /* shExtensions.c in Sources */,
-				4E49A72B1738EC8400BA9146 /* shGeometry.c in Sources */,
-				4E49A72C1738EC8400BA9146 /* shImage.c in Sources */,
-				4E49A72D1738EC8400BA9146 /* shPaint.c in Sources */,
-				4E49A72E1738EC8400BA9146 /* shParams.c in Sources */,
-				4E49A72F1738EC8400BA9146 /* shPath.c in Sources */,
-				4E49A7301738EC8400BA9146 /* shPipeline.c in Sources */,
-				4E49A7311738EC8400BA9146 /* shVectors.c in Sources */,
-				4E49A7321738EC8400BA9146 /* shVgu.c in Sources */,
-				4E49A7721739AB5C00BA9146 /* simpleVGContext.cpp in Sources */,
-				4E49A7731739AB5C00BA9146 /* simpleVGPath.cpp in Sources */,
+				4E49A75C1739AA8600BA9146 /* shArrays.c in Sources */,
+				4E49A75D1739AA8600BA9146 /* shContext.c in Sources */,
+				4E49A75E1739AA8600BA9146 /* shExtensions.c in Sources */,
+				4E49A75F1739AA8600BA9146 /* shGeometry.c in Sources */,
+				4E49A7601739AA8600BA9146 /* shImage.c in Sources */,
+				4E49A7611739AA8600BA9146 /* shPaint.c in Sources */,
+				4E49A7621739AA8600BA9146 /* shParams.c in Sources */,
+				4E49A7631739AA8600BA9146 /* shPath.c in Sources */,
+				4E49A7641739AA8600BA9146 /* shPipeline.c in Sources */,
+				4E49A7651739AA8600BA9146 /* shVectors.c in Sources */,
+				4E49A7661739AA8600BA9146 /* shVgu.c in Sources */,
+				4E49A7671739AA8600BA9146 /* ofxShivaVGRenderer.cpp in Sources */,
+				4E49A76C1739AB3B00BA9146 /* simpleVGContext.cpp in Sources */,
+				4E49A76D1739AB3B00BA9146 /* simpleVGPath.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +579,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_52)",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = ofxShivaVGRendererTestDebug;
+				PRODUCT_NAME = dynamicPathExampleDebug;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -657,7 +665,7 @@
 					"$(LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_51)",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = ofxShivaVGRendererTest;
+				PRODUCT_NAME = dynamicPathExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -665,7 +673,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "ofxShivaVGRendererTest" */ = {
+		E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "dynamicPathExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B4E0A3A1720003C02F2 /* Debug */,
@@ -674,7 +682,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "ofxShivaVGRendererTest" */ = {
+		E4B69B5F0A3A1757003C02F2 /* Build configuration list for PBXNativeTarget "dynamicPathExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E4B69B600A3A1757003C02F2 /* Debug */,

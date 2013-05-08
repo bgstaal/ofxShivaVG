@@ -18,6 +18,7 @@ class ofxShivaVGRenderer : public ofGLRenderer
     
 	    ofxShivaVGRenderer();
     
+	    void background(const ofColor & c);
 	    void draw(ofPolyline & poly);
 	    void draw(ofPath &path);
     	void drawCircle(float x, float y, float z,  float radius);
@@ -37,6 +38,7 @@ class ofxShivaVGRenderer : public ofGLRenderer
     
 	    simpleVGContext _vg;
         deque<ofPoint> _curvePoints;
+	    ofFloatColor _bgColor;
     
     	void _draw(ofSubPath &path, simpleVGPath &toPath);
     

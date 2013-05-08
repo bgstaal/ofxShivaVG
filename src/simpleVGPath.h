@@ -18,6 +18,8 @@ class simpleVGPath
     	void lineTo(float x, float y);
 	    void quadTo(float controlX, float controlY, float x, float y);
 	    void cubicTo(float controlX1, float controlY1, float controlX2, float controlY2, float x, float y);
+    	void arcCWTo(float rx, float ry, float rot, float x, float y);
+        void arcCCWTo(float rx, float ry, float rot, float x, float y);
     
 	private:
     
