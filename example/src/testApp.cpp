@@ -6,6 +6,8 @@ void testApp::setup()
     ofSetFrameRate(100.0f);
     ofSetCurveResolution(100);
     
+    _shapeSize = 160;
+    
     _defaultRenderer = ofGetCurrentRenderer();
     _shivaVGRenderer = ofPtr<ofxShivaVGRenderer>(new ofxShivaVGRenderer);
     ofSetCurrentRenderer(_shivaVGRenderer);
@@ -13,54 +15,85 @@ void testApp::setup()
     _shivaVGRenderer->setLineJoinStyle(VG_JOIN_ROUND);
     _shivaVGRenderer->setLineCapStyle(VG_CAP_ROUND);
     
-    float s = ofGetWidth()*.25f;
+    _createPolygon();
+    _createStar();
+    _createCurvedPath();
+}
+
+void testApp::_createPolygon()
+{
+    float s = _shapeSize;
+    float r = _shapeSize/2;
+   	int numPoints = 6;
+    float angleStep = TWO_PI/numPoints;
     
-    for (int i = 0; i < 6; i++)
+    for (int i = 0; i < numPoints; i++)
     {
-        _jaggedPath.lineTo(ofRandom(-s, s), ofRandom(-s, s));
+    	ofPoint p(cos(angleStep*i)*r, sin(angleStep*i)*r);
+        _polygon.addVertex(p);
     }
     
-    _jaggedPath.close();
+    _polygon.close();
+}
+
+void testApp::_createStar()
+{
+    float s = _shapeSize;
+    float r = _shapeSize/2;
+    float r2 = r/2;
+   	int numPoints = 5;
+    numPoints *= 2;
+    float angleStep = TWO_PI/numPoints;
     
-    _curvedPath.setFilled(true);
-    _curvedPath.setStrokeColor(ofColor(255, 0, 0));
+    _star.setStrokeColor(ofColor(255, 0, 0));
+    _star.setFillColor(ofColor(255, 255, 255));
+    _star.setStrokeWidth(20.0f);
+    
+    for (int i = 0; i < numPoints; i++)
+    {
+        float rad = i % 2 == 0 ? r2 : r;
+        
+        ofPoint p(cos(angleStep*i)*rad, sin(angleStep*i)*rad);
+        _star.lineTo(p);
+    }
+    
+    _star.close();
+}
+
+
+void testApp::_createCurvedPath ()
+{
+    _curvedPath.setFilled(false);
+    _curvedPath.setStrokeColor(ofColor(255, 255, 255));
     _curvedPath.setStrokeWidth(20.0f);
-    _curvedPath.setFillColor(ofColor(255, 255, 0));
     
-    //_curvedPath.lineTo(-s, 0);
-    //_curvedPath.quadBezierTo(-s, -s, s, -s, s, 0);
-    //_curvedPath.arc(0, 0, 100.0f, 100.0f, -90, 90);
-    
-    
-    for (int i = 0; i <5; i++)
+    for (int i = 0; i < 20; i++)
     {
-        _curvedPath.lineTo(ofRandom(-s, s), ofRandom(-s, s));
-    }
-    
-    //_curvedPath.moveTo(ofRandom(-s, s), ofRandom(-s, s));
-    
-    for (int i = 0, num = 10; i <num; i++)
-    {
-		_curvedPath.curveTo(ofRandom(-s, s), ofRandom(-s, s));
+        float s = _shapeSize*1.5;
+        float t = (i*100)/PI;
+        ofPoint p = ofPoint(cos(t)*(sin(t*(cos(t)/PI))*s), sin(t)*(cos(t*(sin(t)/PI))*s));
+        
+        if (i == 0) _curvedPath.moveTo(p);
+        else _curvedPath.curveTo(p);
     }
 }
 
 //--------------------------------------------------------------
 void testApp::update()
 {
-    _zoom = sin(ofGetElapsedTimef()) * 1000;
+    
 }
+
+
 
 //--------------------------------------------------------------
 void testApp::draw()
 {
 	ofBackground(20);
-    
     glPushMatrix();
-    glTranslatef(0, 0, _zoom);
     
-    float w = 100.0f;
-    float s = 20.0f;
+    float w = _shapeSize;
+    float s = 40.0f;
     float x = s;
     float y = s;
     
@@ -80,14 +113,30 @@ void testApp::draw()
     ofSetColor(ofFloatColor(1.0f, 0.0f, 1.0f));
     ofEllipse(x + w, y + w/2, w*2, w);
     
+    x = s;
+    y = s + w + s;
     
-    ofPushMatrix();
+    ofSetLineWidth(20.0f);
     ofSetColor(0, 255, 255);
-    ofTranslate(ofGetWidth()*.25f, ofGetHeight()*.5f);
-    _jaggedPath.draw();
+    ofPushMatrix();
+    ofTranslate(x + (w/2), y + (w/2));
+    	_polygon.draw();
     ofPopMatrix();
     
-    _curvedPath.draw(ofGetWidth()*.75f, ofGetWidth()*.25f);
+    x += w + s;
+    
+    ofPushMatrix();
+    ofTranslate(x + (w/2), y + (w/2));
+    	_star.draw();
+    ofPopMatrix();
+    
+    x += w + w + s;
+    y += w;
+    
+    ofPushMatrix();
+    ofTranslate(x + (w/2), y + (w/2));
+    	_curvedPath.draw();
+    ofPopMatrix();
     
     glPopMatrix();
 }
@@ -110,8 +159,6 @@ void testApp::mousePressed(int x, int y, int button)
 //--------------------------------------------------------------
 void testApp::keyPressed(int key)
 {
-    cout << key << endl;
-    
     if (key == 99) // c letter
     {
         if (_shivaVGRenderer->getLineCapStyle() == VG_CAP_ROUND)

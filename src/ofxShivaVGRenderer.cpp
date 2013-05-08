@@ -198,6 +198,8 @@ void ofxShivaVGRenderer::_draw(ofSubPath &path, simpleVGPath &p)
         
         i++;
     }
+    
+    if (path.isClosed()) p.close();
 }
 
 

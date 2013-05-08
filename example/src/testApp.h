@@ -20,11 +20,17 @@ class testApp : public ofBaseApp
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
+	private:
 		ofPtr<ofBaseRenderer> _defaultRenderer;
 		ofPtr<ofxShivaVGRenderer> _shivaVGRenderer;
     
-	    ofPolyline _jaggedPath;
+	    ofPolyline _polygon;
+    	ofPath _star;
 	    ofPath _curvedPath;
+	    float _shapeSize;
     
-	    float _zoom;
+		void _createPolygon();
+    	void _createStar();
+	    void _createCurvedPath();
+
 };

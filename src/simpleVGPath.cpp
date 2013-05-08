@@ -71,6 +71,20 @@ void simpleVGPath::close()
     vgAppendPathData(_path, 1, &seg, &data);
 }
 
+/*
+void simpleVGPath::ArcTo(float rx, float ry, float rot, float x, float y,
+               VGPathSegment type, VGPathAbsRel absrel)
+{
+    VGubyte seg = type | absrel;
+    float data[5];
+    
+    data[0] = rx; data[1] = ry;
+    data[2] = rot;
+    data[3] = x;  data[4] = y;
+    vgAppendPathData(p, 1, &seg, data);
+}
+ */
+
 
 
 /*
