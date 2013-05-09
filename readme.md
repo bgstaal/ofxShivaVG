@@ -2,7 +2,7 @@
 
 ofxShivaVG is a 2d-renderer for openFrameworks based on the ShivaVG OpenVG implementation. It provides improved rendering quality of 2d paths/curves, polylines and shapes, with optional line capping/joining.
 
-Everything is rendered through openGL wich makes it much more performent than other cpu based 2d graphics libraries (Cairo, Quartz etc). It also makes it easy to render 2d and 3d graphics interchangeably.
+Everything is rendered through openGL wich makes it much more performant than other cpu based 2d graphics libraries (Cairo, Quartz etc). It also makes it easy to render 2d and 3d graphics interchangeably.
 
 ##Usage
 
@@ -57,6 +57,12 @@ Default oF renderer:
 ofxShivaVGRenderer:
 
 ![Imgur](http://i.imgur.com/hsh4HzM.png)
+
+##Roadmap
+
+* Implement arc drawing
+* make ofPath subclass to add cap/join props pr. path
+* support gradient fills
 
 
 
