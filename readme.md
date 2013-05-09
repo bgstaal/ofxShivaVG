@@ -44,6 +44,10 @@ void testApp::setup()
 }
 ```
 
+Now all your ofPath's and ofPolylines should look delicious!
+
+See examples for more details.
+
 ##Screenshots
 
 Default oF renderer:
