@@ -1,6 +1,6 @@
 /*
- * ofxShivaVGRenderer
- * A 2d renderer for openFrameworks based on the ShivaVG library
+ * ofxShivaVG
+ * A 2d rendering library for openFrameworks, based on the ShivaVG library
  * by Bjørn Gunnar Staal
  *
  * This library is free software; you can redistribute it and/or
@@ -21,8 +21,8 @@
  */
 
 
-#ifndef __ofxShivaVGRenderer__SimpleVG__
-#define __ofxShivaVGRenderer__SimpleVG__
+#ifndef __ofxShivaVG__SimpleVG__
+#define __ofxShivaVG__SimpleVG__
 
 #include "openvg.h"
 #include "simpleVGPath.h"

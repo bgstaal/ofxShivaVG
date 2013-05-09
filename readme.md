@@ -1,5 +1,5 @@
-# ofxShivaVGRenderer
+# ofxShivaVG
 
-A 2d renderer for openFrameworks based on the ShivaVG library.
+A 2d-renderer for openFrameworks based on the ShivaVG library.
 
-Provides optimized drawing of 2d graphics in openFrameworks.
+Provides rendering of 2d graphics in openFrameworks.

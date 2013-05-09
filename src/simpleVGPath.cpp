@@ -1,6 +1,6 @@
 /*
- * ofxShivaVGRenderer
- * A 2d renderer for openFrameworks based on the ShivaVG library
+ * ofxShivaVG
+ * A 2d rendering library for openFrameworks, based on the ShivaVG library
  * by Bjørn Gunnar Staal
  *
  * This library is free software; you can redistribute it and/or
