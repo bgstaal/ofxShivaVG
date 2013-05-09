@@ -42,9 +42,7 @@ void testApp::setup()
     _shivaVGRenderer = ofPtr<ofxShivaVGRenderer>(new ofxShivaVGRenderer);
     ofSetCurrentRenderer(_shivaVGRenderer);
 }
-``
-
-
+```
 
 ##Screenshots
 
