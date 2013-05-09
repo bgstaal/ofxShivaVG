@@ -12,7 +12,7 @@ Everything is rendered through openGL wich makes it much more performant than ot
 ###Example
 
 
-First, you **MUST** enable a stencil buffer in your ofProject. This is done by passing in "stencil" as part of the glut display string. Se example below:
+First, you **MUST** enable a stencil buffer in your ofProject. This is done by passing in "stencil" as part of the glut display string. See example below:
 
 
 ```c
