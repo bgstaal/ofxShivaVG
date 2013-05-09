@@ -16,6 +16,7 @@ void testApp::setup()
     _shivaRenderer->setLineCapStyle(VG_CAP_ROUND);
     
     _rotation = _zoom = 0;
+    _paused = false;
 }
 
 ofPoint testApp::_calculateNextPoint()
@@ -53,37 +54,26 @@ void testApp::_addNewPath()
 //--------------------------------------------------------------
 void testApp::update()
 {
-    float t = ofGetElapsedTimef();
-    _zoom = sin(t) * 500;
-    _rotation += .2f;
-    
-    ofPoint p = _calculateNextPoint();
-    
-    if (ofRandom(1.0f) > .96f)
+    if (!_paused)
     {
-        _addNewPath();
-        _paths[_paths.size()-1].moveTo(p);
-    }
-    else
-    {
-        _paths[_paths.size()-1].curveTo(p);
-    }
-    
-    if (_paths.size() > 20) _paths.erase(_paths.begin());
-    
-    int numCommands = 0;
-    
-    for (int i = 0, s = _paths.size(); i < s; i++)
-    {
-        int num = _paths[i].getSubPaths().size();
+        float t = ofGetElapsedTimef();
+        _zoom = sin(t) * 500;
+        _rotation += .2f;
         
-        for (int j = 0; j < num; j++)
+        ofPoint p = _calculateNextPoint();
+        
+        if (ofRandom(1.0f) > .96f)
         {
-            numCommands += _paths[i].getSubPaths()[j].getCommands().size();
+            _addNewPath();
+            _paths[_paths.size()-1].moveTo(p);
         }
+        else
+        {
+            _paths[_paths.size()-1].curveTo(p);
+        }
+        
+        if (_paths.size() > 20) _paths.erase(_paths.begin());
     }
-    
-    cout << "num commands: " << numCommands << endl;
 }
 
 //--------------------------------------------------------------
@@ -117,7 +107,10 @@ void testApp::draw()
 //--------------------------------------------------------------
 void testApp::keyPressed(int key)
 {
-    
+    if (key == 112) // "p"
+    {
+        _paused = !_paused;
+    }
 }
 
 //--------------------------------------------------------------

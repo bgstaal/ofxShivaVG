@@ -24,11 +24,12 @@ class testApp : public ofBaseApp
 	    ofPoint _center;
 	    vector<ofPath> _paths;
 	    ofPoint _prevPoint;
-	    bool _useShiva;
 	    ofPtr<ofBaseRenderer> _defaultRenderer;
 	    ofPtr<ofxShivaVGRenderer> _shivaRenderer;
 	    float _zoom;
 	    float _rotation;
+        bool _useShiva;
+	    bool _paused;
     
 	    void _addNewPath();
     	ofPoint _calculateNextPoint();

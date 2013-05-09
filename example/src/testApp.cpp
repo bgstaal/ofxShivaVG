@@ -45,8 +45,8 @@ void testApp::_createStar()
     numPoints *= 2;
     float angleStep = TWO_PI/numPoints;
     
-    _star.setStrokeColor(ofColor(255, 0, 0));
     _star.setFillColor(ofColor(255, 255, 255));
+    _star.setStrokeColor(ofColor(129, 174, 186));
     _star.setStrokeWidth(20.0f);
     
     for (int i = 0; i < numPoints; i++)
@@ -64,7 +64,7 @@ void testApp::_createStar()
 void testApp::_createCurvedPath ()
 {
     _curvedPath.setFilled(false);
-    _curvedPath.setStrokeColor(ofColor(255, 255, 255));
+    _curvedPath.setStrokeColor(ofColor::white);
     _curvedPath.setStrokeWidth(20.0f);
     
     for (int i = 0; i < 20; i++)
@@ -89,34 +89,34 @@ void testApp::update()
 //--------------------------------------------------------------
 void testApp::draw()
 {
-	ofBackground(20);
+	ofBackground(30);
     
     float w = _shapeSize;
     float s = 40.0f;
     float x = s;
     float y = s;
     
-    ofSetColor(255, 0, 0);
+    ofSetColor(ofColor::fromHex(0xFF7B87));
     ofRect(x, y, 0, w, w);
     
     x += w + s;
-    ofSetColor(ofFloatColor(0.0f, 0.0f, 1.0f));
+    ofSetColor(ofColor::fromHex(0x475887));
     ofCircle(x + w/2, y + w/2, w/2);
     
     x += w + s;
-    ofSetColor(ofFloatColor(0.0f, 1.0f, 0.0f));
+    ofSetColor(220, 222, 121);
     ofSetLineWidth(30.0f);
     ofLine(x + s, y + s, x + w - s, y + w - s);
     
     x += w + s;
-    ofSetColor(ofFloatColor(1.0f, 0.0f, 1.0f));
+    ofSetColor(255, 232, 183);
     ofEllipse(x + w, y + w/2, w*2, w);
     
     x = s;
     y = s + w + s;
     
     ofSetLineWidth(20.0f);
-    ofSetColor(0, 255, 255);
+    ofSetColor(100, 255, 255);
     ofPushMatrix();
     ofTranslate(x + (w/2), y + (w/2));
     	_polygon.draw();
