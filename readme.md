@@ -2,25 +2,17 @@
 
 ofxShivaVG is a 2d-renderer for openFrameworks based on the ShivaVG OpenVG implementation. It provides improved rendering quality of 2d paths/curves, polylines and shapes, with optional line capping/joining.
 
-Everything is rendered through openGL wich makes it much more performent than other cpu based 2d graphics libraries (Cairo, Quartz etc).
-
-
-
-##Screenshots
-
-Default oF renderer:
-
-![Imgur](http://i.imgur.com/hMSeaZu.png)
-
-ofxShivaVGRenderer:
-
-![Imgur](http://i.imgur.com/hsh4HzM.png)
-
-
+Everything is rendered through openGL wich makes it much more performent than other cpu based 2d graphics libraries (Cairo, Quartz etc). It also makes it easy to render 2d and 3d graphics interchangeably.
 
 ##Usage
 
-First you MUST enable a stencil buffer in your ofProject. This is done by passing in "stencil" as part of the glut display string. Se example below:
+* Clone into openframeworks/addons
+* Add src & lib folders to your project
+
+###Example
+
+
+First, you **MUST** enable a stencil buffer in your ofProject. This is done by passing in "stencil" as part of the glut display string. Se example below:
 
 
 ```c
@@ -41,3 +33,28 @@ int main()
 	ofRunApp(new testApp()); // start the app
 }
 ```
+
+Then switch to the ofxShivaRenderer in your setup method
+
+```c
+void testApp::setup()
+{
+    _shivaVGRenderer = ofPtr<ofxShivaVGRenderer>(new ofxShivaVGRenderer);
+    ofSetCurrentRenderer(_shivaVGRenderer);
+}
+``
+
+
+
+##Screenshots
+
+Default oF renderer:
+
+![Imgur](http://i.imgur.com/hMSeaZu.png)
+
+ofxShivaVGRenderer:
+
+![Imgur](http://i.imgur.com/hsh4HzM.png)
+
+
+
