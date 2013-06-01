@@ -146,6 +146,7 @@ void ofxShivaVGRenderer::_doDrawPath(ofPath &path, simpleVGPath &p)
         {
         	case ofPath::Command::moveTo:
                 p.moveTo(c->to.x, c->to.y);
+                _curvePoints.clear();
                 _curvePoints.push_back(c->to);
                 break;
                 
