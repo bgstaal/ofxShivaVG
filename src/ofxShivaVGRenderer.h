@@ -55,7 +55,7 @@ class ofxShivaVGRenderer : public ofGLRenderer
         deque<ofPoint> _curvePoints;
 	    ofFloatColor _bgColor;
     
-    	void _draw(ofSubPath &path, simpleVGPath &toPath);
+    	void _doDrawPath(ofPath &path, simpleVGPath &toPath);
     
 };
 

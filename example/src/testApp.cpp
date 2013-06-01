@@ -54,7 +54,16 @@ void testApp::_createStar()
         float rad = i % 2 == 0 ? r2 : r;
         
         ofPoint p(cos(angleStep*i)*rad, sin(angleStep*i)*rad);
-        _star.lineTo(p);
+        
+        if (i == 0)
+        {
+            _star.moveTo(p);
+        }
+        else
+        {
+            _star.lineTo(p);
+        }
+        
     }
     
     _star.close();
@@ -171,11 +180,13 @@ void testApp::keyPressed(int key)
     {
         if (_shivaVGRenderer->getLineCapStyle() == VG_CAP_ROUND)
         {
+            cout << "cap square" << endl;
             _shivaVGRenderer->setLineCapStyle(VG_CAP_SQUARE);
             _shivaVGRenderer->setLineJoinStyle(VG_JOIN_MITER);
         }
         else
         {
+            cout << "cap round" << endl;
             _shivaVGRenderer->setLineCapStyle(VG_CAP_ROUND);
             _shivaVGRenderer->setLineJoinStyle(VG_JOIN_ROUND);
         }
