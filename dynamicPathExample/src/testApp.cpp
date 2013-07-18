@@ -17,8 +17,6 @@ void testApp::setup()
     
     _rotation = _zoom = 0;
     _paused = false;
-    
-    ofVbo::disableVAOs();
 }
 
 ofPoint testApp::_calculateNextPoint()
