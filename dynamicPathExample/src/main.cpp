@@ -1,12 +1,12 @@
 #include "testApp.h"
-#include "ofAppGlutWindow.h"
+#include "ofAppGLFWWindow.h"
 
 //--------------------------------------------------------------
 int main()
 {
-	ofAppGlutWindow window; // create a window
-	window.setGlutDisplayString("rgba alpha double stencil samples=16");
+    ofPtr<ofAppGLFWWindow> win = ofPtr<ofAppGLFWWindow>(new ofAppGLFWWindow());
+    win->setStencilBits(8);
 	// set width, height, mode (OF_WINDOW or OF_FULLSCREEN)
-	ofSetupOpenGL(&window, 1440, 1024, OF_WINDOW);
+	ofSetupOpenGL(win, 1440, 1024, OF_WINDOW);
 	ofRunApp(new testApp()); // start the app
 }

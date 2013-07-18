@@ -34,6 +34,9 @@ class ofxShivaVGRenderer : public ofGLRenderer
 	    ofxShivaVGRenderer();
     
 	    void background(const ofColor & c);
+    	void clear(float r, float g, float b, float a=0);
+		void clear(float brightness, float a=0);
+
 	    void draw(ofPolyline & poly);
 	    void draw(ofPath &path);
     	void drawCircle(float x, float y, float z,  float radius);

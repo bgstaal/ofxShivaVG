@@ -17,6 +17,8 @@ void testApp::setup()
     
     _rotation = _zoom = 0;
     _paused = false;
+    
+    ofVbo::disableVAOs();
 }
 
 ofPoint testApp::_calculateNextPoint()
@@ -32,6 +34,7 @@ ofPoint testApp::_calculateNextPoint()
 void testApp::_addNewPath()
 {
     ofPath p;
+
     p.setFilled(false);
     p.setStrokeWidth(ofRandom(10.0f, 30.0f));
     
