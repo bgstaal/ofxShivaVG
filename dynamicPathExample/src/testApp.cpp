@@ -32,6 +32,7 @@ ofPoint testApp::_calculateNextPoint()
 void testApp::_addNewPath()
 {
     ofPath p;
+
     p.setFilled(false);
     p.setStrokeWidth(ofRandom(10.0f, 30.0f));
     
@@ -79,7 +80,7 @@ void testApp::update()
 //--------------------------------------------------------------
 void testApp::draw()
 {
-    ofBackground(20);
+    ofBackground(30);
     
     glPushMatrix();
     //glTranslatef(-ofGetWidth()/2.0f, ofGetW, _zoom);

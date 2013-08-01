@@ -55,7 +55,18 @@ void ofxShivaVGRenderer::background(const ofColor & c)
 {
     _bgColor = c;
 	glClearColor(_bgColor[0],_bgColor[1],_bgColor[2], _bgColor[3]);
-	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
+void ofxShivaVGRenderer::clear(float r, float g, float b, float a)
+{
+	glClearColor(r / 255., g / 255., b / 255., a / 255.);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
+void ofxShivaVGRenderer::clear(float brightness, float a)
+{
+	clear(brightness, brightness, brightness, a);
 }
 
 
@@ -158,6 +169,7 @@ void ofxShivaVGRenderer::_doDrawPath(ofPath &path, simpleVGPath &p)
                 break;
                 
             case ofPath::Command::curveTo:
+                
                 
                 _curvePoints.push_back(c->to);
                 
