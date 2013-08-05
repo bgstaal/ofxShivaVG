@@ -1,6 +1,6 @@
 # ofxShivaVG
 
-*Important update! As of Aug. 5 2013 the master branch was rolled back to work with the latest official OF release. (0.7.4). The mater branch will from now on always be kept in sync with the latest official release of OF. Check out the dev branch for a version working with the latest from the develop branch of OF (currently 0.8)*
+*Important update! As of Aug. 5 2013 the master branch was rolled back to work with the latest official OF release. (0.7.4). The master branch will from now on always be kept in sync with the latest official release of OF. Check out the dev branch for a version working with the latest from the develop branch of OF (currently 0.8)*
 
 ##About
 
