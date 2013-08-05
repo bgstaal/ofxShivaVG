@@ -1,5 +1,9 @@
 # ofxShivaVG
 
+*Important update! As of Aug. 5 2013 the master branch was rolled back to work with the latest official OF release. (0.7.4). The mater branch will from now on always be kept in sync with the latest official release of OF. Check out the dev branch for a version working with the latest from the develop branch of OF (currently 0.8)*
+
+##About
+
 ofxShivaVG is a 2d-renderer for openFrameworks based on the ShivaVG OpenVG implementation. It provides improved rendering quality of 2d paths/curves, polylines and shapes, with optional line capping/joining.
 
 Everything is rendered through openGL wich makes it much more performant than other cpu based 2d graphics libraries (Cairo, Quartz etc). It also makes it easy to render 2d and 3d graphics interchangeably.
