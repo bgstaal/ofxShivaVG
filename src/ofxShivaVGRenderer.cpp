@@ -55,7 +55,18 @@ void ofxShivaVGRenderer::background(const ofColor & c)
 {
     _bgColor = c;
 	glClearColor(_bgColor[0],_bgColor[1],_bgColor[2], _bgColor[3]);
-	glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
+void ofxShivaVGRenderer::clear(float r, float g, float b, float a)
+{
+	glClearColor(r / 255., g / 255., b / 255., a / 255.);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+}
+
+void ofxShivaVGRenderer::clear(float brightness, float a)
+{
+	clear(brightness, brightness, brightness, a);
 }
 
 
@@ -96,14 +107,10 @@ void ofxShivaVGRenderer::draw(ofPath &path)
     
     // TODO: fill or stroke?
     
-	vector<ofSubPath> & paths = path.getSubPaths();
+//	vector<ofSubPath> & paths = path.getSubPaths();
     
     simpleVGPath p;
-    
-	for(int i=0;i<(int)paths.size();i++)
-    {
-		_draw(paths[i], p);
-	}
+	_doDrawPath(path, p);
     
     ofColor prevColor;
 	if(path.getUseShapeColor()) prevColor = style.color;
@@ -138,37 +145,31 @@ void ofxShivaVGRenderer::draw(ofPath &path)
 	if(path.getUseShapeColor()) setColor(prevColor);
 }
 
-void ofxShivaVGRenderer::_draw(ofSubPath &path, simpleVGPath &p)
+void ofxShivaVGRenderer::_doDrawPath(ofPath &path, simpleVGPath &p)
 {
-    const vector<ofSubPath::Command> & commands = path.getCommands();
+    const vector<ofPath::Command> &commands = path.getCommands();
     
     int i = 0;
     
-    for(vector<ofSubPath::Command>::const_iterator c = commands.begin(); c != commands.end(); ++c)
+    for(vector<ofPath::Command>::const_iterator c = commands.begin(); c != commands.end(); ++c)
     {
         switch(c->type)
         {
-            case ofSubPath::Command::lineTo:
+        	case ofPath::Command::moveTo:
+                p.moveTo(c->to.x, c->to.y);
+                _curvePoints.clear();
+                _curvePoints.push_back(c->to);
+                break;
+                
+            case ofPath::Command::lineTo:
                 
                 _curvePoints.clear();
-                
-                if (i == 0)
-                {
-                    // if the first command in a subPath is a lineTo it should be
-                    // interpeted as a moveTo command
-                    // this makes up for the lack of a moveTo command in ofSubPath
-                    
-                    p.moveTo(c->to.x, c->to.y);
-                    _curvePoints.push_back(c->to);
-                }    
-                else
-                {
-                    p.lineTo(c->to.x, c->to.y);
-                }
+                p.lineTo(c->to.x, c->to.y);
                 
                 break;
                 
-            case ofSubPath::Command::curveTo:
+            case ofPath::Command::curveTo:
+                
                 
                 _curvePoints.push_back(c->to);
                 
@@ -191,29 +192,31 @@ void ofxShivaVGRenderer::_draw(ofSubPath &path, simpleVGPath &p)
 
                 break;
                 
-            case ofSubPath::Command::bezierTo:
+            case ofPath::Command::bezierTo:
                 _curvePoints.clear();
                 p.cubicTo(c->cp1.x, c->cp1.y, c->cp2.x, c->cp2.y, c->to.x, c->to.y);
                 break;
                 
-            case ofSubPath::Command::quadBezierTo:
+            case ofPath::Command::quadBezierTo:
                 _curvePoints.clear();
                 p.cubicTo(c->cp1.x, c->cp1.y, c->cp2.x, c->cp2.y, c->to.x, c->to.y);
                 break;
                 
-            case ofSubPath::Command::arc:
-                ofLog(OF_LOG_WARNING, "Arcs are not implemented in the ofxShivaRenderer yet. Sory :-(");
-                break;
-                
-            case ofSubPath::Command::arcNegative:
+            case ofPath::Command::arc:
                 ofLog(OF_LOG_WARNING, "Arcs are not implemented in the ofxShivaRenderer yet. Sorry :-(");
+                break;
+                
+            case ofPath::Command::arcNegative:
+                ofLog(OF_LOG_WARNING, "Arcs are not implemented in the ofxShivaRenderer yet. Sorry :-(");
+                break;
+                
+            case ofPath::Command::close:
+                p.close();
                 break;
         }
         
         i++;
     }
-    
-    if (path.isClosed()) p.close();
 }
 
 
