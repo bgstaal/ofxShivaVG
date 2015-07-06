@@ -3,10 +3,9 @@
 #include "ofMain.h"
 #include "ofxShivaVGRenderer.h"
 
-class testApp : public ofBaseApp
+class ofApp : public ofBaseApp
 {
 	public:
-    
 		void setup();
 		void update();
 		void draw();
@@ -22,17 +21,16 @@ class testApp : public ofBaseApp
 		void gotMessage(ofMessage msg);
     
 	private:
+	    ofPoint _center;
+	    vector<ofPath> _paths;
+	    ofPoint _prevPoint;
+	    ofPtr<ofBaseRenderer> _defaultRenderer;
+	    ofPtr<ofxShivaVGRenderer> _shivaRenderer;
+	    float _zoom;
+	    float _rotation;
+        bool _useShiva;
+	    bool _paused;
     
-		ofPtr<ofBaseRenderer> _defaultRenderer;
-		ofPtr<ofxShivaVGRenderer> _shivaVGRenderer;
-    
-	    ofPolyline _polygon;
-    	ofPath _star;
-	    ofPath _curvedPath;
-	    float _shapeSize;
-    
-		void _createPolygon();
-    	void _createStar();
-	    void _createCurvedPath();
-
+	    void _addNewPath();
+    	ofPoint _calculateNextPoint();
 };

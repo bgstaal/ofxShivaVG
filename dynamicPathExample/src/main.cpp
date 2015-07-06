@@ -1,4 +1,4 @@
-#include "testApp.h"
+#include "ofApp.h"
 #include "ofAppGLFWWindow.h"
 
 //--------------------------------------------------------------
@@ -8,5 +8,5 @@ int main()
     win->setStencilBits(8);
 	// set width, height, mode (OF_WINDOW or OF_FULLSCREEN)
 	ofSetupOpenGL(win, 1440, 1024, OF_WINDOW);
-	ofRunApp(new testApp()); // start the app
+	ofRunApp(new ofApp()); // start the app
 }
