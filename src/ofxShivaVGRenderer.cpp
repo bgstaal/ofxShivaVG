@@ -27,8 +27,9 @@
 // TODO: Implement resize!
 
 ofxShivaVGRenderer::ofxShivaVGRenderer ()
+: ofGLRenderer(ofGetWindowPtr())
 {
-   	_vg.create(ofGetWidth(), ofGetHeight());
+	_vg.create(ofGetWidth(), ofGetHeight());
 }
 
 void ofxShivaVGRenderer::setLineCapStyle(VGCapStyle cap)
@@ -85,14 +86,17 @@ void ofxShivaVGRenderer::draw(ofPolyline & poly)
     simpleVGPath p;
     
     vector<ofVec3f> &verts = poly.getVertices();
-    
-    p.moveTo(verts[0].x, verts[0].y);
-    
-    for (vector<ofVec3f>::iterator v = verts.begin()+1; v != verts.end(); ++v)
-    {
-        p.lineTo(v->x, v->y);
-    }
-    
+	
+		if (verts.size() > 0)
+		{
+			p.moveTo(verts[0].x, verts[0].y);
+			
+			for (vector<ofVec3f>::iterator v = verts.begin()+1; v != verts.end(); ++v)
+			{
+				p.lineTo(v->x, v->y);
+			}
+		}
+	
     if(poly.isClosed())
     {
         p.close();
@@ -147,6 +151,7 @@ void ofxShivaVGRenderer::draw(ofPath &path)
 
 void ofxShivaVGRenderer::_doDrawPath(ofPath &path, simpleVGPath &p)
 {
+	
     const vector<ofPath::Command> &commands = path.getCommands();
     
     int i = 0;

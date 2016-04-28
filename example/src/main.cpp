@@ -4,9 +4,13 @@
 //--------------------------------------------------------------
 int main()
 {
-    ofPtr<ofAppGLFWWindow> win = ofPtr<ofAppGLFWWindow>(new ofAppGLFWWindow());
-    win->setStencilBits(8);
-	// set width, height, mode (OF_WINDOW or OF_FULLSCREEN)
-	ofSetupOpenGL(win, 1440, 1024, OF_WINDOW);
-	ofRunApp(new ofApp()); // start the app
+	ofAppGLFWWindow window;
+	ofGLFWWindowSettings s;
+	s.width = 1440;
+	s.height = 1024;
+	s.stencilBits = 8;
+	
+	ofCreateWindow(s);
+	//ofSetupOpenGL(1920, 1080, OF_FULLSCREEN);
+	ofRunApp(new ofApp);
 }
