@@ -29,7 +29,9 @@ static VGUErrorCode shAppend(VGPath path, SHint commSize, const VGubyte *comm,
                              SHint dataSize, const VGfloat *data)
 {
   VGErrorCode err = VG_NO_ERROR;
-  VGPathDatatype type = vgGetParameterf(path, VG_PATH_DATATYPE);
+  VGfloat typeFloat = vgGetParameterf(path, VG_PATH_DATATYPE);
+  // How to cast VGfloat to VGPathDatatype?
+  VGPathDatatype type = VG_PATH_DATATYPE_S_8;   // Hack so it compiles
   VGfloat scale = vgGetParameterf(path, VG_PATH_SCALE);
   VGfloat bias = vgGetParameterf(path, VG_PATH_BIAS);
   SH_ASSERT(dataSize <= 26);
