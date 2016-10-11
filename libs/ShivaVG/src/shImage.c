@@ -832,7 +832,7 @@ VG_API_CALL void vgImageSubData(VGImage image,
   /* TODO: check data array alignment */
   
   shCopyPixels(i->data, i->fd.vgformat, i->texwidth * i->fd.bytes,
-               data, dataFormat,dataStride,
+               (SHuint8 *)data, dataFormat,dataStride,
                i->width, i->height, width, height,
                x, y, 0, 0, width, height);
   
@@ -876,7 +876,7 @@ VG_API_CALL void vgGetImageSubData(VGImage image,
   
   /* TODO: check data array alignment */
   
-  shCopyPixels(data, dataFormat, dataStride,
+  shCopyPixels((SHuint8 *)data, dataFormat, dataStride,
                i->data, i->fd.vgformat, i->texwidth * i->fd.bytes,
                width, height, i->width, i->height,
                0,0,x,x,width,height);
@@ -1141,7 +1141,7 @@ VG_API_CALL void vgReadPixels(void * data, VGint dataStride,
   glPixelStorei(GL_PACK_ALIGNMENT, 1);
   glReadPixels(sx, sy, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
   
-  shCopyPixels(data, dataFormat, dataStride,
+  shCopyPixels((SHuint8 *)data, dataFormat, dataStride,
                pixels, winfd.vgformat, -1,
                width, height, width, height,
                0, 0, 0, 0, width, height);
